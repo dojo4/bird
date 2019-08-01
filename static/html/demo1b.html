@@ -1,0 +1,243 @@
+<html>
+    <head>
+        <link href="minireset.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800,900&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 14px;
+            }
+            h1 {
+                width: 100%;
+                font-size: 3rem;
+                text-align: center;
+                font-weight: 600;
+            }
+            h1.main {
+                margin-top: 20%;
+                color: #fff;
+            }
+            .center-self {
+                margin: auto;
+            }
+
+            .container {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            video#bgvid { 
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                max-width: initial;
+                height: auto;
+                z-index: -100;
+                -ms-transform: translateX(-50%) translateY(-50%);
+                -moz-transform: translateX(-50%) translateY(-50%);
+                -webkit-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+                background: url(poster.png) no-repeat;
+                background-size: cover; 
+            }
+            #cover {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(150, 197, 216, 0.8)
+            }
+
+            .content {
+                position: relative;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                align-content: flex-start;
+                flex-wrap: wrap;
+            }
+
+            #logo {
+                margin: 5rem 5rem 0 auto;
+                align-self: start;
+                max-width: 10rem;
+            }
+
+            #more {
+                color: #fff;
+                font-size: 2rem;
+                position: absolute;
+                bottom: 5rem;
+                left: 50%;
+                right: 50%;
+                margin-left: -2rem;
+            }
+
+            #first-to-know {
+                height: 600px;
+                display: flex;
+                align-items: center;
+                align-content: center;
+                background: url(ju-on-e6XsI7qqvAA-unsplash.jpg) #fff no-repeat center 40%;
+            }
+            #first-to-know::before {
+                content: '';
+                display: block;
+                width: 100%;
+                background: linear-gradient(180deg, rgba(0,0,0,0.6), transparent);
+                height: 8rem;
+                position: absolute;
+                align-self: flex-start;
+            }
+            #first-to-know h1 {
+                color: #fff;
+            }
+
+            #email-box {
+                width: 100%;
+                padding: 0 15%;
+                position: relative;
+                display: flex;
+            }
+
+            #email-box input, button {
+                font-size: 1.4rem;
+                background: transparent;
+                border: none;
+                
+            }
+            #email-box input {
+                width: 60%;
+                min-width: 20rem;
+                margin: 0 auto;
+                border-bottom: 1px solid #fff;
+            }
+            #email-box input::placeholder {
+                color: #fff;
+                font-style: italic;
+                font-weight: 100;
+            }
+            #email-box button {
+                color: #fff;
+                font-size: 4rem;
+                font-weight: 100;
+                height: 4rem;
+                /* position: absolute; */
+                top: 8rem;
+                overflow: hidden;
+                cursor: pointer;
+            }
+            #email-box button:before {
+                content: '\203A';
+                display: block;
+                transition: margin 0.25s linear;
+            }
+            #email-box button:after {
+                content: 'go';
+                display: block;
+                font-size: 2rem;
+            }
+
+            #email-box button:hover:before {
+                margin-top: -4rem;
+            }
+
+            #footer {
+                background-color: #89A84F;
+                height: 600px;
+                align-content: center;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                align-content: space-around;
+                justify-content: space-around
+            }
+
+            #footer img {
+                max-width: 5rem;
+            }
+
+            #footer h2 {
+                font-size: 2rem;
+                color: #fff;
+                text-align: right;
+                width: 22rem;
+            }
+
+            #footer h2 span {
+                transition: opacity 0.5s;
+            }
+
+            #footer a {
+                color: #fff;
+            }
+
+
+            @media screen and (max-device-width: 800px) {
+                html {
+                    background: url(poster.png) #000 no-repeat center center fixed;
+                }
+                #bgvid {
+                    display: none;
+                }
+            }
+        </style>
+        <script>
+            (function() {
+                const interval1 = setInterval(simpleTextOut, 1500);
+                const interval2 = setInterval(simpleTextIn, 3000);
+                const words = ['Clarity', 'Awareness', 'Balance', 'Vitality'];
+                let int = 0;
+
+                function simpleTextOut(e) {
+                    const span = document.getElementById('is_simple');
+                    span.style.opacity = 0;
+                }
+                function simpleTextIn(e) {
+                    const span = document.getElementById('is_simple');
+                    span.innerText = words[int];
+                    int = int + 1 >= words.length ? 0 : int + 1;
+                    span.style.opacity = 1;
+                }
+            })()
+        </script>
+    </head>
+    <body>
+        <section class="container" style="height: 100%;">
+            <div id="cover">
+                <div class="content">
+                    <img id="logo" src="logo-lockup.svg" />
+                    <h1 class="main">Meditation Made Simple</h1>
+                    <div id="more" class="center-self">╲╱</div>
+                </div>
+            </div>
+            <video playsinline autoplay muted loop poster="poster.png" id="bgvid">
+                <source src="background-720.webm" type="video/webm">
+                <source src="background-720.mp4" type="video/mp4">
+            </video>
+        </section>
+        <section class="container">
+            <div id="first-to-know">
+                <h1>Be the first to know</h1>
+            </div>
+        </section>
+        <section class="container">
+            <div id="footer" class="content">
+                <div id="email-box" class="center-self">
+                    <input type="email" placeholder="please enter your email" />
+                    <button type="submit" ></button>
+                </div>  
+                <img src="logo-lockup.svg" />
+                <h2><span id="is_simple">Vitality</span> is Simple</h2>
+                <a href="mailto:hi@birdmeditation.com" >hi@birdmeditation.com</a>
+            </div>
+        </section>
+    </body>
+</html>

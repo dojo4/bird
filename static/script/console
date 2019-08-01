@@ -1,0 +1,36 @@
+#! /usr/bin/env ruby
+
+require_relative "../config/boot.rb"
+
+require "middleman-core"
+require "pry"
+
+script_dir = File.expand_path(File.dirname(__FILE__))
+mm_root = File.dirname(script_dir)
+
+Dir.chdir(mm_root)
+
+::Middleman::Application.config.watcher_disable = true
+::Middleman::Application.config.cli_options = {}
+
+@app = ::Middleman::Application.new do
+  environment = (ENV['MM_ENV'] || ENV['RACK_ENV'] || 'development')
+
+  set :environment, environment.to_sym
+
+
+  ready{}
+  #logger(opts[:debug] ? 0 : 1, opts[:instrumenting] || false)
+end
+
+Site.app = @app
+
+module Kernel
+  def reload!
+    exec $0, *ARGV
+  end
+end
+
+require 'pry'
+
+binding.pry(:hooks => ::Pry::Hooks.new, :prompt => proc{|*a| "#{ File.basename(Dir.pwd) } ~> "})

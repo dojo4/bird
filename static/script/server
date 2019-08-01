@@ -1,0 +1,7 @@
+#! /usr/bin/env ruby
+
+root = File.dirname(File.dirname(__FILE__))
+
+Dir.chdir(root) do
+  exec 'bundle exec middleman server'
+end

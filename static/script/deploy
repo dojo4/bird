@@ -1,0 +1,106 @@
+#! /usr/bin/env ruby
+#
+  ENV['DEPLOY_SCRIPT'] = File.expand_path(__FILE__)
+  ENV['RACK_ENV'] ||= 'production'
+
+#
+  require 'net/http'
+  require 'fileutils'
+
+#
+  require_relative '../config/boot.rb'
+
+#
+  $debug = ARGV.delete('-d') || ARGV.delete('--debug')
+  author = ARGV.shift || 'dojo4@dojo4.com'
+
+  script_dir = File.expand_path(File.dirname(__FILE__))
+  mm_root = File.dirname(script_dir)
+
+#
+  Dir.chdir(mm_root)
+
+  spawn = proc do |command|
+    system(command) || abort("#{ command } #=> #{ $?.exitstatus }")
+  end
+
+#
+  a = Time.now.to_f
+  at_exit do
+    b = Time.now.to_f
+    c = (b - a)
+    STDERR.puts "# time : #{ c.round(2) } seconds "
+  end
+
+#
+  version = `git rev-parse HEAD`.strip
+
+  current_build =
+    begin
+      IO.binread("#{ mm_root }/build/VERSION").strip == version
+    rescue Object => e
+      false
+    end
+
+  unless current_build
+    Say.say("your shit is stale - building...", :color => :yellow)
+    spawn['bundle exec middleman build --verbose']
+  end
+
+# prepare the deploy dir
+  spawn['rm -rf deploy']
+  spawn['mkdir deploy']
+  spawn['rsync -a build/ deploy/']
+  spawn['rsync -a public/ deploy'] if test(?e, 'public')
+
+#
+  exit(42) if $debug
+
+# this stupid loop combats out-of-memory errors on netlify gem/servers
+#
+  command     = "bundle exec rake netlify:deploy"
+
+  deployed    = false
+  checked     = false
+  n           = 3
+  netlify_url = Site.config.get(:netlify, :site, :url)
+  url         = Site.config.get(:url) || netlify_url
+
+# HACK - work around netlify deployments issues
+#
+  trap('SIGINT'){ exit!(42) }
+
+  1.times do
+    n.times do
+      deployed = Bundler.clean_system(command)
+
+      if deployed
+        break
+      end
+
+      explicative = %w( blargh! dang! doh! ).sort_by{ rand }.first
+      Say.say("#{ explicative } deploy blew up, retrying...", :color => :red)
+      sleep(rand * 10)
+    end
+
+    n.times do
+      checked =
+        [url, netlify_url].any? do |u|
+          begin
+            Net::HTTP.get_response(URI(u)).code.to_i == 200
+            true
+          rescue Object => e
+            false
+          end
+        end
+
+      break if checked
+
+      explicative = %w( blargh! dang! doh! ).sort_by{ rand }.first
+      Say.say("#{ explicative } check blew up, retrying...", :color => :red)
+      sleep(rand * 10)
+    end
+  end
+
+#
+  exit(deployed && checked ? 0 : 1)

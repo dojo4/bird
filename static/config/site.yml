@@ -1,0 +1,24 @@
+identifier: static
+title: Static
+slug: static
+name: static
+
+description : >-
+  a static site
+
+keywords:
+  - a
+  - static
+  - site
+
+author: DOJO4
+
+development:
+  url: http://localhost:4567/
+
+staging:
+  url: https://staging-static.com
+
+production:
+  url: https://static.com
+

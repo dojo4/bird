@@ -1,0 +1,23 @@
+<br> <br>
+<hr> <hr>
+<br> <br>
+
+<ul>
+
+  <%
+    demos = %w[
+      demo1.html
+      demo1b.html
+      demo2.html
+    ]
+
+    demos.each do |url|
+  %>
+
+    <li>
+      <a href='<%= url %>'><%= url %></a>
+    </li>
+
+  <% end %>
+
+</ul>

@@ -1,0 +1,32 @@
+#! /usr/bin/env ruby
+
+# use lib/site_settings.rb to display the site's settings
+
+#
+  argv = []
+
+#
+  ARGV.each do |arg|
+    k, v = arg.split(/[=:]/)
+
+    if v
+      ENV[k] = v
+    else
+      argv.push(k)
+    end
+  end
+
+#
+  if argv.first
+    env = argv.shift
+    ENV['MM_ENV'] = env
+  end
+
+#
+  dirname = File.dirname(File.expand_path(__FILE__))
+  rails_root = File.dirname(dirname)
+  load(File.join(rails_root, 'lib', 'site_settings.rb'))
+
+#
+  SITE_SETTINGS.to_hash.to_yaml.display
+
