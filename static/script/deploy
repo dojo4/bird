@@ -61,6 +61,7 @@
             Net::HTTP.get_response(URI(u)).code.to_i == 200
             true
           rescue Object => e
+          p e
             false
           end
         end
