@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link href="minireset.min.css" rel="stylesheet">
+        <link href="/stylesheets/minireset.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800,900&display=swap" rel="stylesheet">
         <style>
             body {
@@ -41,7 +41,7 @@
                 -moz-transform: translateX(-50%) translateY(-50%);
                 -webkit-transform: translateX(-50%) translateY(-50%);
                 transform: translateX(-50%) translateY(-50%);
-                background: url(poster.png) no-repeat;
+                background: url('images/poster.png') no-repeat;
                 background-size: cover; 
             }
             #cover {
@@ -85,7 +85,7 @@
                 display: flex;
                 align-items: center;
                 align-content: center;
-                background: url(ju-on-e6XsI7qqvAA-unsplash.jpg) #fff no-repeat center 40%;
+                background: url('/images/ju-on-e6XsI7qqvAA-unsplash.jpg') #fff no-repeat center 40%;
             }
             #first-to-know::before {
                 content: '';
@@ -182,7 +182,7 @@
 
             @media screen and (max-device-width: 800px) {
                 html {
-                    background: url(poster.png) #000 no-repeat center center fixed;
+                    background: url('/images/poster.png') #000 no-repeat center center fixed;
                 }
                 #bgvid {
                     display: none;
@@ -213,14 +213,14 @@
         <section class="container" style="height: 100%;">
             <div id="cover">
                 <div class="content">
-                    <img id="logo" src="logo-lockup.svg" />
+                    <img id="logo" src="/images/logo-lockup.svg" />
                     <h1 class="main">Meditation Made Simple</h1>
                     <div id="more" class="center-self">╲╱</div>
                 </div>
             </div>
-            <video playsinline autoplay muted loop poster="poster.png" id="bgvid">
-                <source src="background-720.webm" type="video/webm">
-                <source src="background-720.mp4" type="video/mp4">
+            <video playsinline autoplay muted loop poster="/images/poster.png" id="bgvid">
+                <source src="/images/background-720.webm" type="video/webm">
+                <source src="/images/background-720.mp4" type="video/mp4">
             </video>
         </section>
         <section class="container">
@@ -234,7 +234,7 @@
                     <input type="email" placeholder="please enter your email" />
                     <button type="submit" ></button>
                 </div>  
-                <img src="logo-lockup.svg" />
+                <img src="/images/logo-lockup.svg" />
                 <h2><span id="is_simple">Vitality</span> is Simple</h2>
                 <a href="mailto:hi@birdmeditation.com" >hi@birdmeditation.com</a>
             </div>
