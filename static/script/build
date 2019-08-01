@@ -1,0 +1,55 @@
+#! /usr/bin/env ruby
+#
+  ENV['DEPLOY_SCRIPT'] = File.expand_path(__FILE__)
+  ENV['RACK_ENV'] ||= 'production'
+
+#
+  require 'net/http'
+  require 'fileutils'
+
+#
+  require_relative '../config/boot.rb'
+
+#
+  $debug = ARGV.delete('-d') || ARGV.delete('--debug')
+  author = ARGV.shift || 'dojo4@dojo4.com'
+
+  script_dir = File.expand_path(File.dirname(__FILE__))
+  mm_root = File.dirname(script_dir)
+
+#
+  Dir.chdir(mm_root)
+
+  spawn = proc do |command|
+    system(command) || abort("#{ command } #=> #{ $?.exitstatus }")
+  end
+
+#
+  a = Time.now.to_f
+  at_exit do
+    b = Time.now.to_f
+    c = (b - a)
+    STDERR.puts "# time : #{ c.round(2) } seconds "
+    STDERR.puts "# dir : #{ File.expand_path('./build') }"
+  end
+
+#
+  version = `git rev-parse HEAD`.strip
+
+  current_build =
+    begin
+      IO.binread("#{ mm_root }/build/VERSION").strip == version
+    rescue Object => e
+      false
+    end
+
+  unless current_build
+    Say.say("your shit is stale - building...", :color => :yellow)
+    spawn['bundle exec middleman build --verbose']
+  end
+
+# prepare the deploy dir
+  spawn['rm -rf deploy']
+  spawn['mkdir deploy']
+  spawn['rsync -a build/ deploy/']
+  spawn['rsync -a public/ deploy'] if test(?e, 'public')
