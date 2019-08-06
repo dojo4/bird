@@ -1,15 +1,14 @@
-identifier: static
-title: Static
-slug: static
-name: static
+identifier: bird
+title: Bird
+slug: bird
+name: abird
 
 description : >-
-  a static site
+  Bird's site
 
 keywords:
-  - a
-  - static
-  - site
+  - bird
+  - meditation
 
 author: DOJO4
 
@@ -20,5 +19,5 @@ staging:
   url: https://staging-static.com
 
 production:
-  url: https://static.com
+  url: https://nervous-shaw-3cf314.netlify.com
 
