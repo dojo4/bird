@@ -18,7 +18,7 @@ h1 {
 }
 h1.main {
     margin-top: 25vh;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 h2 {
     font-size: 1.5rem;
@@ -50,8 +50,8 @@ video#bgvid {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url('/images/poster.png') no-repeat;
-    background-size: cover; 
+    background: url('/images/poster.jpg') no-repeat;
+    background-size: cover;
 }
 #cover {
     width: 100%;
@@ -60,7 +60,7 @@ video#bgvid {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(150, 197, 216, 0.8)
+    background-color: rgba(150, 197, 216, 0.9);
 }
 
 .content {
@@ -69,8 +69,12 @@ video#bgvid {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    align-content: flex-start;
+    align-content: space-between;
     flex-wrap: wrap;
+}
+
+.title {
+    text-align: center;
 }
 
 #logo {
@@ -87,7 +91,7 @@ form {
     justify-content: center;
 }
 #email-box {
-    padding: 5rem;
+    padding: 8rem 5rem;
     width: 100%;
     position: relative;
 }
@@ -100,57 +104,33 @@ form {
 }
 #email-box input {
     width: 60%;
-    border-bottom: 3px solid #65873b;
+    border-bottom: 4px solid #65873b;
     color: #65873b;
     text-align: center;
+    padding: 0.3em;
 }
 #email-box input::placeholder {
     color: #65873b;
-    font-style: italic;
+    font-weight: 300;
 }
 
 #email-box button {
     background-color: #65873b;
     color: #f2f1e6;
     cursor: pointer;
-    padding: 0.5rem 3rem;
-    border-radius: 1.5rem;
-    font-size: 1rem;
-    margin-top: 3rem;
+    padding: 1rem 5rem;
+    border-radius: 1.6rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 1rem;
 }
 
-
-#footer {
-    background-color: #89A84F;
-    height: 400px;
-    align-content: center;
-    padding: 5rem;
-}
-
-#footer img {
-    max-width: 5rem;
-}
-
-#footer h2 {
-    font-size: 2rem;
-    color: #fff;
-    text-align: right;
-    width: 22rem;
-    letter-spacing: 1.1;
-}
-
-#footer h2 span {
-    transition: opacity 0.5s;
-}
-
-#footer a {
-    color: #fff;
-}
 
 
 @media screen and (max-device-width: 800px) {
     html {
-        background: url('/images/poster.png') #000 no-repeat center center fixed;
+        background: url('/images/poster.jpg') #000 no-repeat center center;
+        background-size: cover;
     }
     #bgvid {
         display: none;
