@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <%= stylesheet_link_tag 'main.scss' %>
+        <script>
+            (function() {
+                const interval1 = setInterval(simpleTextOut, 1500);
+                const interval2 = setInterval(simpleTextIn, 3000);
+                const words = ['Clarity', 'Awareness', 'Balance', 'Vitality'];
+                let int = 0;
+
+                function simpleTextOut(e) {
+                    const span = document.getElementById('is_simple');
+                    span.style.opacity = 0;
+                }
+                function simpleTextIn(e) {
+                    const span = document.getElementById('is_simple');
+                    span.innerText = words[int];
+                    int = int + 1 >= words.length ? 0 : int + 1;
+                    span.style.opacity = 1;
+                }
+            })()
+        </script>
+    </head>
+    <body>
+        <section class="container" style="height: 100%;">
+            <div id="cover">
+                <div class="content">
+                    <h1 class="main">Meditation Made Simple</h1>
+                    <h2 class="center-self">Coming Soon</h2>
+
+                    <div id="email-box" class="center-self">
+                        <form name="contact" method="POST" data-netlify="true">
+                            <input type="email" name="email" placeholder="enter your email address" />
+                            <div class="flex-break"></div>
+                            <button type="submit" >Be the first to know.</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <video playsinline autoplay muted loop poster="/images/poster.png" id="bgvid">
+                <source src="/images/background-720.webm" type="video/webm">
+                <source src="/images/background-720.mp4" type="video/mp4">
+            </video>
+        </section>
+        <section class="container">
+            <div id="footer" class="content">
+                <h2><span id="is_simple">Vitality</span><br>is Simple.</h2>
+                <a href="mailto:hi@birdmeditation.com" >hi@birdmeditation.com</a>
+            </div>
+        </section>
+    </body>
+</html>

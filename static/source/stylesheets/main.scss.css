@@ -1,0 +1,158 @@
+@import 'minireset.min.css';
+@import 'fonts.css';
+
+/* blue: #96c5d8; */
+/* green: #65873b; */
+/* white: #f2f1e6; */
+
+body {
+    font-family: 'Cera Pro', sans-serif;
+    font-size: 14px;
+    color: #f2f1e6;
+}
+h1 {
+    width: 100%;
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: 500;
+}
+h1.main {
+    margin-top: 25vh;
+    margin-bottom: 2rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
+.center-self {
+    margin: auto;
+}
+.flex-break {
+    flex-basis: 100%;
+    height: 0;
+}
+.container {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+video#bgvid { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    max-width: initial;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url('/images/poster.png') no-repeat;
+    background-size: cover; 
+}
+#cover {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(150, 197, 216, 0.8)
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+#logo {
+    margin: 5rem 5rem 0 auto;
+    align-self: start;
+    max-width: 10rem;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#email-box {
+    padding: 5rem;
+    width: 100%;
+    position: relative;
+}
+
+#email-box input, button {
+    font-size: 1.4rem;
+    background: transparent;
+    border: none;
+    
+}
+#email-box input {
+    width: 60%;
+    border-bottom: 3px solid #65873b;
+    color: #65873b;
+    text-align: center;
+}
+#email-box input::placeholder {
+    color: #65873b;
+    font-style: italic;
+}
+
+#email-box button {
+    background-color: #65873b;
+    color: #f2f1e6;
+    cursor: pointer;
+    padding: 0.5rem 3rem;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    margin-top: 3rem;
+}
+
+
+#footer {
+    background-color: #89A84F;
+    height: 400px;
+    align-content: center;
+    padding: 5rem;
+}
+
+#footer img {
+    max-width: 5rem;
+}
+
+#footer h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: right;
+    width: 22rem;
+    letter-spacing: 1.1;
+}
+
+#footer h2 span {
+    transition: opacity 0.5s;
+}
+
+#footer a {
+    color: #fff;
+}
+
+
+@media screen and (max-device-width: 800px) {
+    html {
+        background: url('/images/poster.png') #000 no-repeat center center fixed;
+    }
+    #bgvid {
+        display: none;
+    }
+}
