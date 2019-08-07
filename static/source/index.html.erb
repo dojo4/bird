@@ -1,24 +1,39 @@
-<br> <br>
-<hr> <hr>
-<br> <br>
+<html>
+    <head>
+        <%= stylesheet_link_tag 'main.scss' %>
+    </head>
+    <script>
+        (function() {
 
-<ul>
+            
+            function emailIsValid (email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+            }
+        })()
+      
+    </script>
+    <body>
+        <section class="container" style="height: 100%;">
+            <div id="cover">
+                <div class="content">
+                    <div class="title center-self">
+                        <h1 class="main">Meditation Made Simple.</h1>
+                        <h2>Coming Soon.</h2>
+                    </div>
 
-  <%
-    demos = %w[
-      demo1
-      demo1b
-      demo2
-      demo3
-    ]
-
-    demos.each do |url|
-  %>
-
-    <li>
-      <a href='<%= url %>' target='_blank'><%= url %></a>
-    </li>
-
-  <% end %>
-
-</ul>
+                    <div id="email-box" class="center-self">
+                        <form name="contact" method="POST" data-netlify="true" action="/thankyou">
+                            <input type="email" name="email" placeholder="Enter your email address" />
+                            <div class="flex-break"></div>
+                            <button type="submit" >Be the first to know.</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <video playsinline autoplay muted loop poster="/images/poster.jpg" id="bgvid">
+                <source src="/images/background-720.webm" type="video/webm">
+                <source src="/images/background-720.mp4" type="video/mp4">
+            </video>
+        </section>
+    </body>
+</html>

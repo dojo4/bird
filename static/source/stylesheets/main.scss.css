@@ -114,7 +114,7 @@ form {
     font-weight: 300;
 }
 
-#email-box button {
+button {
     background-color: #65873b;
     color: #f2f1e6;
     cursor: pointer;
@@ -123,6 +123,11 @@ form {
     font-size: 1.2rem;
     font-weight: 500;
     margin-top: 1rem;
+}
+
+button a {
+    color: #f2f1e6;
+    text-decoration: none;
 }
 
 

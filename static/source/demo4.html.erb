@@ -2,6 +2,16 @@
     <head>
         <%= stylesheet_link_tag 'main.scss' %>
     </head>
+    <script>
+        (function() {
+
+            
+            function emailIsValid (email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+            }
+        })()
+      
+    </script>
     <body>
         <section class="container" style="height: 100%;">
             <div id="cover">
@@ -12,7 +22,7 @@
                     </div>
 
                     <div id="email-box" class="center-self">
-                        <form name="contact" method="POST" data-netlify="true">
+                        <form name="contact" method="POST" data-netlify="true" action="/thankyou">
                             <input type="email" name="email" placeholder="Enter your email address" />
                             <div class="flex-break"></div>
                             <button type="submit" >Be the first to know.</button>

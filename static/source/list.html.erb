@@ -1,0 +1,24 @@
+<br> <br>
+<hr> <hr>
+<br> <br>
+
+<ul>
+
+  <%
+    demos = %w[
+      demo1
+      demo1b
+      demo2
+      demo3
+    ]
+
+    demos.each do |url|
+  %>
+
+    <li>
+      <a href='<%= url %>' target='_blank'><%= url %></a>
+    </li>
+
+  <% end %>
+
+</ul>
