@@ -1,5 +1,6 @@
-@import 'minireset.min.css';
+@import 'bulma.min.css';
 @import 'fonts.css';
+@import 'fontawesome.css';
 
 /* blue: #96c5d8; */
 /* green: #65873b; */
@@ -8,6 +9,9 @@
 body {
     font-family: 'Cera Pro', sans-serif;
     font-size: 14px;
+    color: #f2f1e6;
+}
+h1, h2, p {
     color: #f2f1e6;
 }
 h1 {
@@ -20,9 +24,14 @@ h1.main {
     margin-top: 25vh;
     margin-bottom: 1rem;
 }
-h2 {
-    font-size: 1.5rem;
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.3rem; }
+
+a, a:visited {
+    color: #fff;
+    text-decoration: none;
 }
+
 .center-self {
     margin: auto;
 }
@@ -30,11 +39,11 @@ h2 {
     flex-basis: 100%;
     height: 0;
 }
-.container {
+.wrapper {
     display: block;
     position: relative;
     width: 100%;
-    height: auto;
+    height: 100vh;
 }
 video#bgvid { 
     position: absolute;
@@ -63,7 +72,7 @@ video#bgvid {
     background-color: rgba(150, 197, 216, 0.9);
 }
 
-.content {
+.content-wrap {
     position: relative;
     width: 100%;
     display: flex;
@@ -90,47 +99,56 @@ form {
     align-items: center;
     justify-content: center;
 }
+
+.button {
+    background-color: #65873b;
+    color: #f2f1e6;
+    font-size: 1.4rem;
+    border-width: 0;
+    border-radius: 1.6rem;
+}
+
 #email-box {
-    padding: 8rem 5rem;
+    /* padding: 8rem 5rem; */
     width: 100%;
     position: relative;
 }
 
+#email-box h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 #email-box input, button {
     font-size: 1.4rem;
-    background: transparent;
-    border: none;
-    
 }
 #email-box input {
-    width: 60%;
-    border-bottom: 4px solid #65873b;
-    color: #65873b;
-    text-align: center;
-    padding: 0.3em;
+    border-color: #65873b;
+    color: #333;
+    border-top-left-radius: 1.6rem;
+    border-bottom-left-radius: 1.6rem;
 }
-#email-box input::placeholder {
-    color: #65873b;
-    font-weight: 300;
+#email-box input[type="email"] {
+    width: 30rem;
 }
 
-button {
+#email-box button.button {
     background-color: #65873b;
     color: #f2f1e6;
-    cursor: pointer;
-    padding: 1rem 5rem;
-    border-radius: 1.6rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-top: 1rem;
+    border-top-right-radius: 1.6rem;
+    border-bottom-right-radius: 1.6rem;
 }
 
-button a {
-    color: #f2f1e6;
-    text-decoration: none;
+#email-box #errors {
+    width: 100%;
+    text-align: center;
 }
 
-
+.bird-footer {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 3rem;
+}
 
 @media screen and (max-device-width: 800px) {
     html {
@@ -139,5 +157,13 @@ button a {
     }
     #bgvid {
         display: none;
+    }
+    #email-box {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #email-box input[type="email"] {
+        width: 100%;
     }
 }

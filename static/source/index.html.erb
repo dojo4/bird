@@ -1,32 +1,47 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <%= stylesheet_link_tag 'main.scss' %>
-    </head>
-    <script>
-        (function() {
+        <meta charset="utf-8">
+        <title>Welcome to Bird Meditation</title>
+        <meta name="description" content="Bird Meditation promotional page">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            
-            function emailIsValid (email) {
-                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-            }
-        })()
-      
-    </script>
+        <%= stylesheet_link_tag 'main.scss' %>
+        <%= javascript_include_tag 'ready.min.js' %>
+        <%= javascript_include_tag 'main.js' %>
+    </head>
+    
     <body>
-        <section class="container" style="height: 100%;">
+        <section class="wrapper">
             <div id="cover">
-                <div class="content">
+                <div class="content-wrap">
                     <div class="title center-self">
                         <h1 class="main">Meditation Made Simple.</h1>
                         <h2>Coming Soon.</h2>
                     </div>
 
-                    <div id="email-box" class="center-self">
+                    <div id="email-box" class="container">
+                        <h3>Be the first to know.</h3>
                         <form name="contact" method="POST" data-netlify="true" action="/thankyou">
-                            <input type="email" name="email" placeholder="Enter your email address" />
-                            <div class="flex-break"></div>
-                            <button type="submit" >Be the first to know.</button>
+                            <div class="field has-addons">
+                                <div class="control has-icons-left">
+                                    <input class="input is-large" type="email" id="email_input" placeholder="Enter your email address">
+                                    <span class="icon is-normal is-left">
+                                        <i class="far fa-envelope fa-md"></i>
+                                    </span>
+                                </div>
+                                <div class="control">
+                                    <button type="submit" class="button" id="submit_button" disabled>
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                            <p id="errors" class="help is-danger"></p>
                         </form>
+                    </div>
+
+                    <div class="bird-footer">
+                        <a href="mailto:hellow@birdmeditation.com">hello@birdmeditation.com</a>
                     </div>
                 </div>
             </div>

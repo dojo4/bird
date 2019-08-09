@@ -1,15 +1,23 @@
 <html>
     <head>
+        <meta charset="utf-8">
+        <title>Welcome to Bird Meditation</title>
+        <meta name="description" content="Bird Meditation promotional page">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <%= stylesheet_link_tag 'main.scss' %>
+        <%= javascript_include_tag 'ready.min.js' %>
+        <%#= javascript_include_tag 'main.js' %>
     </head>
     <body>
-        <section class="container" style="height: 100%;">
+        <section class="wrapper" style="height: 100%;">
             <div id="cover">
-                <div class="content">
+                <div class="content-wrap">
                     <div class="title center-self">
                         <h1 class="main">Meditation Made Simple.</h1>
                         <h2>Thank you for signing up.  We will be in touch.</h2>
-                        <button><a href="/">back to main page.</a></button>
+                        <br><br>
+                        <button class="button"><a href="/">back to main page.</a></button>
                     </div>
                 </div>
             </div>
