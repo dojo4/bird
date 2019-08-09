@@ -5,41 +5,41 @@ layout: default
   <%= javascript_include_tag 'main.js' %>
 <% end %>
 
-        <section class="wrapper">
-            <div id="cover">
-                <div class="content-wrap">
-                    <div class="title center-self">
-                        <h1 class="main">Meditation Made Simple.</h1>
-                        <h2>Coming Soon.</h2>
-                    </div>
-
-                    <div id="email-box" class="container">
-                        <h3>Be the first to know.</h3>
-                        <form name="contact" method="POST" data-netlify="true" action="/thankyou">
-                            <div class="field has-addons">
-                                <div class="control has-icons-left">
-                                    <input class="input is-large" type="email" id="email_input" placeholder="Enter your email address">
-                                    <span class="icon is-normal is-left">
-                                        <i class="far fa-envelope fa-md"></i>
-                                    </span>
-                                </div>
-                                <div class="control">
-                                    <button type="submit" class="button" id="submit_button" disabled>
-                                        Submit
-                                    </button>
-                                </div>
-                            </div>
-                            <p id="errors" class="help is-danger"></p>
-                        </form>
-                    </div>
-
-                    <div class="bird-footer">
-                        <a href="mailto:hellow@birdmeditation.com">hello@birdmeditation.com</a>
-                    </div>
-                </div>
+<section class="wrapper">
+    <div id="cover">
+        <div class="content-wrap">
+            <div class="title center-self">
+                <h1 class="main">Meditation Made Simple.</h1>
+                <h2>Coming Soon.</h2>
             </div>
-            <video playsinline autoplay muted loop poster="/images/poster.jpg" id="bgvid">
-                <source src="/images/background-720.webm" type="video/webm">
-                <source src="/images/background-720.mp4" type="video/mp4">
-            </video>
-        </section>
+
+            <div id="email-box" class="container">
+                <h3>Be the first to know.</h3>
+                <form name="contact" method="POST" data-netlify="true" action="/thankyou">
+                    <div class="field has-addons">
+                        <div class="control has-icons-left">
+                            <input class="input is-large" type="email" id="email_input" placeholder="Enter your email">
+                            <span class="icon is-normal is-left">
+                                <i class="far fa-envelope fa-md"></i>
+                            </span>
+                        </div>
+                        <div class="control">
+                            <button type="submit" class="button" id="submit_button" disabled>
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                    <p id="errors" class="help is-danger"></p>
+                </form>
+            </div>
+
+            <div class="bird-footer">
+                <a href="mailto:hello@birdmeditation.com">hello@birdmeditation.com</a>
+            </div>
+        </div>
+    </div>
+    <video playsinline autoplay muted loop poster="/images/poster.jpg" id="bgvid">
+        <source src="/images/background-720.webm" type="video/webm">
+        <source src="/images/background-720.mp4" type="video/mp4">
+    </video>
+</section>
