@@ -1,6 +1,7 @@
 @import 'bulma.min.css';
 @import 'fonts.css';
 @import 'fontawesome.css';
+@import 'bulma-overrides.css';
 
 /* blue: #96c5d8; */
 /* green: #65873b; */
@@ -21,7 +22,7 @@ h1 {
     font-weight: 500;
 }
 h1.main {
-    margin-top: 25vh;
+    /*  margin-top: 25vh; */
     margin-bottom: 1rem;
 }
 h2 { font-size: 1.5rem; }
@@ -33,7 +34,7 @@ a, a:visited {
 }
 
 .center-self {
-    margin: auto;
+    margin: 0 auto;
 }
 .flex-break {
     flex-basis: 100%;
@@ -74,17 +75,18 @@ video#bgvid {
 }
 
 .content-wrap {
-    position: relative;
+    /* position: relative; */
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    align-content: space-between;
     flex-wrap: wrap;
 }
 
-.title {
+.title-wrap {
     text-align: center;
+    align-self: flex-start;
+    margin-top: 25vh;
 }
 
 #logo {
@@ -104,9 +106,12 @@ form {
 .button {
     background-color: #65873b;
     color: #f2f1e6;
-    font-size: 1.4rem;
+    font-size: 1rem;
+    font-weight: 600;
     border-width: 0;
     border-radius: 1.6rem;
+    height: 3.15rem;
+    padding: 0 3rem;
 }
 
 #email-box {
@@ -121,16 +126,25 @@ form {
 }
 
 #email-box input, button {
-    font-size: 1.4rem;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 3.15rem;
 }
 #email-box input {
     border-color: #65873b;
-    color: #333;
+    color: #231f20;
     border-top-left-radius: 1.6rem;
     border-bottom-left-radius: 1.6rem;
+    border-width: 3px;
+    border-right: none;
 }
 #email-box input[type="email"] {
-    width: 30rem;
+    width: 25rem;
+}
+
+#email-box > form div.has-icons-left span {
+    height: 3.15rem;
+    width: 3.15rem;
 }
 
 #email-box button.button {
@@ -141,13 +155,19 @@ form {
 }
 
 #email-box #errors {
-    width: 100%;
+    width: auto;
     text-align: center;
+    background: #231f20;
+    padding: 0rem 3rem;
+    border-radius: 1.5em;
+    line-height: 2.5rem;
+    font-size: 1rem;
 }
 
 .bird-footer {
     width: 100%;
     text-align: center;
+    align-self: flex-end;
     padding-bottom: 3rem;
 }
 
