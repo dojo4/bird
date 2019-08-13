@@ -18,19 +18,19 @@ layout: default
                 <form name="contact" method="POST" data-netlify="true" action="/thankyou">
                     <div class="field has-addons">
                         <div class="control has-icons-left">
-                            <input class="input is-normal" type="email" id="email_input" placeholder="Enter your email">
+                            <input class="input is-normal" type="email" name="email" id="email_input" placeholder="Enter your email">
                             <span class="icon is-normal is-left">
                                 <i class="far fa-envelope fa-md"></i>
                             </span>
                         </div>
                         <div class="control">
-                            <button type="submit" class="button" id="submit_button" disabled>
+                            <button type="submit" class="button" id="submit_button">
                                 Submit
                             </button>
                         </div>
                     </div>
                     <div class="flex-break"></div>
-                    <p id="errors" class="help is-danger"></p>
+                    <p id="errors" class="help is-info"></p>
                 </form>
             </div>
 

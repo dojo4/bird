@@ -1,3 +1,7 @@
-*[class*="is-danger"] {
-    color: #ffd530 !important;
+*[class*="is-danger"], *[class*="text-danger"] {
+    color: #ffd530 !important; /* orange */
+}
+
+*[class*="is-info"], *[class*="text-info"] {
+    color: #65873b !important; /* green */
 }

@@ -10,16 +10,17 @@
 body {
     font-family: 'Cera Pro', sans-serif;
     font-size: 14px;
+    font-weight: 500;
     color: #f2f1e6;
 }
 h1, h2, p {
     color: #f2f1e6;
+    font-weight: 500;
 }
 h1 {
     width: 100%;
     font-size: 3.5rem;
     text-align: center;
-    font-weight: 500;
 }
 h1.main {
     /*  margin-top: 25vh; */
@@ -31,6 +32,7 @@ h3 { font-size: 1.3rem; }
 a, a:visited {
     color: #fff;
     text-decoration: none;
+    font-size: 1rem;
 }
 
 .center-self {
@@ -87,6 +89,9 @@ video#bgvid {
     text-align: center;
     align-self: flex-start;
     margin-top: 25vh;
+}
+.title-wrap h2 {
+    font-weight: bold;
 }
 
 #logo {
@@ -157,11 +162,12 @@ form {
 #email-box #errors {
     width: auto;
     text-align: center;
-    background: #231f20;
+    /* background: #231f20; */
     padding: 0rem 3rem;
     border-radius: 1.5em;
     line-height: 2.5rem;
     font-size: 1rem;
+    font-weight: bold;
 }
 
 .bird-footer {
