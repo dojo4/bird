@@ -4,8 +4,12 @@
     domready(function () {
         submit_button = document.getElementById('submit_button');
         email_input = document.getElementById('email_input');
-        submit_button.onclick = validateForm;
-        // email_input.onclick = keypressHandler;
+        if (submit_button) {
+            submit_button.onclick = validateForm;
+        }
+        if (document.getElementById('bgvid')) {
+            document.getElementById('bgvid').playbackRate = 0.5;
+        }
         // email_input.change = keypressHandler;
     });
     

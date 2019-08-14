@@ -11,10 +11,10 @@ body {
     font-family: 'Cera Pro', sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #f2f1e6;
+    color: #fff;
 }
 h1, h2, p {
-    color: #f2f1e6;
+    color: #fff;
     font-weight: 500;
 }
 h1 {
@@ -110,7 +110,7 @@ form {
 
 .button {
     background-color: #65873b;
-    color: #f2f1e6;
+    color: #fff;
     font-size: 1rem;
     font-weight: 600;
     border-width: 0;
@@ -145,6 +145,9 @@ form {
 }
 #email-box input[type="email"] {
     width: 25rem;
+}
+#email-box input[type="email"]::placeholder {
+    color: #dbdbdb;
 }
 
 #email-box > form div.has-icons-left span {

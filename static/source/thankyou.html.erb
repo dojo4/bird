@@ -1,12 +1,16 @@
 ---
 layout: default
 ---
+<% content_for :assets do %>
+  <%= javascript_include_tag 'main.js' %>
+<% end %>
+
 <section class="wrapper" id="thankyou">
     <div id="cover">
         <div class="content-wrap">
             <div class="title-wrap center-self">
                 <h1 class="main">Meditation made simple.</h1>
-                <h2>Thank you for signing up.  We will be in touch.</h2>
+                <h3>Thank you for signing up.  We will be in touch.</h3>
                 <br><br>
                 <button class="button"><a href="/">Back to main page</a></button>
             </div>
