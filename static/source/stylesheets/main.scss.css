@@ -144,9 +144,10 @@ form {
     border-right: none;
 }
 #email-box input[type="email"] {
-    width: 25rem;
+    width: 18rem;
 }
-#email-box input[type="email"]::placeholder {
+#email-box input[type="email"]::placeholder,
+#email-box input[type="email"]:-ms-input-placeholder {
     color: #dbdbdb;
 }
 
